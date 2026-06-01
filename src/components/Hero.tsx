@@ -23,16 +23,6 @@ export default function Hero({ highContrast }: HeroProps) {
       )}
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
-        {/* Status Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[10px] font-mono uppercase tracking-[0.15em] mb-8 animate-fade-in border transition-all hover:scale-105 border-white/10 bg-white/5">
-          <span className="flex h-2 w-2 relative">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-slate-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#888]"></span>
-          </span>
-          <span className={highContrast ? "text-cyan-400 font-bold" : "text-[#aaa]"}>
-            Founder, Lume Systems &bull; Software Developer
-          </span>
-        </div>
 
         {/* Hero Title (Combining requested full-stack accessibility headline with the Sophisticated Dark italic design) */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-light leading-[1.1] tracking-tight text-white italic mb-10">
