@@ -80,19 +80,36 @@ export default function Projects({ highContrast }: ProjectsProps) {
 
                     {/* Action Links */}
                     <div className="flex items-center gap-2" onClick={(e) => e.stopPropagation()}>
-                      <a
-                        href={project.links?.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`p-2.5 rounded-none border transition-all hover:scale-105 ${
-                          highContrast
-                            ? "border-cyan-400 text-cyan-400 hover:bg-white/10"
-                            : "border-white/10 text-[#aaa] hover:text-white bg-white/5"
-                        }`}
-                        aria-label={`View ${project.title} source code on GitHub (opens in a new tab)`}
-                      >
-                        <Github className="h-4 w-4" />
-                      </a>
+                      {project.links?.github && (
+                        <a
+                          href={project.links.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`p-2.5 rounded-none border transition-all hover:scale-105 ${
+                            highContrast
+                              ? "border-cyan-400 text-cyan-400 hover:bg-white/10"
+                              : "border-white/10 text-[#aaa] hover:text-white bg-white/5"
+                          }`}
+                          aria-label={`View ${project.title} source code on GitHub (opens in a new tab)`}
+                        >
+                          <Github className="h-4 w-4" />
+                        </a>
+                      )}
+                      {project.links?.live && (
+                        <a
+                          href={project.links.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`p-2.5 rounded-none border transition-all hover:scale-105 ${
+                            highContrast
+                              ? "border-cyan-400 text-cyan-400 hover:bg-white/10"
+                              : "border-white/10 text-[#aaa] hover:text-white bg-white/5"
+                          }`}
+                          aria-label={`Visit ${project.title} live website (opens in a new tab)`}
+                        >
+                          <ExternalLink className="h-4 w-4" />
+                        </a>
+                      )}
                     </div>
                   </div>
 
