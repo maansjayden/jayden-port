@@ -73,9 +73,9 @@ export default function Contact({ highContrast }: ContactProps) {
     <section id="contact" className={`py-20 border-t ${highContrast ? "bg-black border-cyan-400" : "bg-[#050505] border-white/10"}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-left mb-16">
-          <p className="text-[10px] font-mono uppercase tracking-[0.3em] text-[#888] mb-2">Initiate Engagement</p>
+          <p className="text-[10px] font-mono uppercase tracking-[0.3em] text-[#888] mb-2">Get in Touch</p>
           <h2 className="text-3xl sm:text-4xl font-serif font-light leading-tight tracking-tight italic text-white">
-            Establish <span className="font-sans not-italic font-bold uppercase tracking-tighter text-[#666]">Contact.</span>
+            Let's <span className="font-sans not-italic font-bold uppercase tracking-tighter text-[#666]">Connect.</span>
           </h2>
         </div>
 
@@ -83,10 +83,10 @@ export default function Contact({ highContrast }: ContactProps) {
           <div className="lg:col-span-5 space-y-6">
             <div className={`p-6 sm:p-8 rounded-none border ${highContrast ? "bg-neutral-900 border-2 border-cyan-400" : "bg-white/[0.01] border-white/5"}`}>
               <h3 className="text-sm font-mono uppercase tracking-widest mb-4 text-[#aaa] flex items-center gap-2">
-                <ShieldCheck className="h-4 w-4" /> Inquiry Protocols
+                <ShieldCheck className="h-4 w-4" /> Contact Info
               </h3>
               <p className="text-xs text-[#888] leading-relaxed font-sans mb-6">
-                All messages sent via the Lume Communication layer are encrypted locally in transit.
+                Reach out directly by email or use the form — I usually respond within 24 hours.
               </p>
 
               <div className={`p-4 rounded-none border flex justify-between items-center ${highContrast ? "bg-black" : "bg-[#0a0a0a]"}`}>
@@ -107,19 +107,31 @@ export default function Contact({ highContrast }: ContactProps) {
             )}
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
-              <input type="text" name="name" required value={formState.name} onChange={handleFormChange} placeholder="Your Name" className="w-full px-4 py-3 bg-[#050505] border border-white/10 text-white" />
-              <input type="email" name="email" required value={formState.email} onChange={handleFormChange} placeholder="Email" className="w-full px-4 py-3 bg-[#050505] border border-white/10 text-white" />
+              <div className="flex flex-col gap-1.5">
+                <label htmlFor="name" className="text-[10px] uppercase tracking-widest font-mono text-[#888]">Name *</label>
+                <input id="name" type="text" name="name" required value={formState.name} onChange={handleFormChange} placeholder="Your Name" className="w-full px-4 py-3 bg-[#050505] border border-white/10 text-white focus:outline-none focus:border-white/40" />
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <label htmlFor="email" className="text-[10px] uppercase tracking-widest font-mono text-[#888]">Email *</label>
+                <input id="email" type="email" name="email" required value={formState.email} onChange={handleFormChange} placeholder="you@example.com" className="w-full px-4 py-3 bg-[#050505] border border-white/10 text-white focus:outline-none focus:border-white/40" />
+              </div>
             </div>
-            
-            <select name="subject" value={formState.subject} onChange={handleFormChange} className="w-full mb-6 px-4 py-3 bg-[#050505] border border-white/10 text-white">
-              <option>Business / General Inquiry</option>
-              <option>Lume Systems Accessibility Partnership</option>
-            </select>
 
-            <textarea name="message" required rows={5} value={formState.message} onChange={handleFormChange} placeholder="Detail your request..." className="w-full mb-6 px-4 py-3 bg-[#050505] border border-white/10 text-white" />
-            
-            <button type="submit" disabled={isSubmitting} className="w-full py-4 bg-white text-black font-mono uppercase text-[11px] tracking-widest hover:bg-slate-200">
-              {isSubmitting ? "Dispatching..." : "Dispatch Secure Message"}
+            <div className="flex flex-col gap-1.5 mb-6">
+              <label htmlFor="subject" className="text-[10px] uppercase tracking-widest font-mono text-[#888]">Subject</label>
+              <select id="subject" name="subject" value={formState.subject} onChange={handleFormChange} className="w-full px-4 py-3 bg-[#050505] border border-white/10 text-white focus:outline-none focus:border-white/40">
+                <option>Business / General Inquiry</option>
+                <option>Lume Systems Accessibility Partnership</option>
+              </select>
+            </div>
+
+            <div className="flex flex-col gap-1.5 mb-6">
+              <label htmlFor="message" className="text-[10px] uppercase tracking-widest font-mono text-[#888]">Message *</label>
+              <textarea id="message" name="message" required rows={5} value={formState.message} onChange={handleFormChange} placeholder="How can I help?" className="w-full px-4 py-3 bg-[#050505] border border-white/10 text-white focus:outline-none focus:border-white/40" />
+            </div>
+
+            <button type="submit" disabled={isSubmitting} className="w-full py-4 bg-white text-black font-mono uppercase text-[11px] tracking-widest hover:bg-slate-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors">
+              {isSubmitting ? "Sending..." : "Send Message"}
             </button>
           </form>
         </div>

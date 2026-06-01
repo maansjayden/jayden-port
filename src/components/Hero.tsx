@@ -1,5 +1,6 @@
 import React from "react";
-import { Github, Linkedin, ArrowRight, Accessibility, Sparkles, FolderDown, Terminal, MessageCircle } from "lucide-react";
+import { Github, Linkedin, ArrowRight, Accessibility, Sparkles, Download, Terminal, MessageCircle } from "lucide-react";
+import { SPOKEN_LANGUAGES } from "../data";
 
 interface HeroProps {
   highContrast: boolean;
@@ -55,7 +56,7 @@ export default function Hero({ highContrast }: HeroProps) {
             I bridge the gap between heavy computational capability and digital accessibility standards.
           </p>
           <p className={`text-sm sm:text-base font-sans leading-relaxed ${
-            highContrast ? "text-slate-105" : "text-[#888]"
+            highContrast ? "text-slate-200" : "text-[#888]"
           }`}>
             Specializing in full-stack web development, my daily objective is constructing sleek software 
             architecture that adheres strictly to WCAG AAA benchmarks—ensuring that the next wave of advanced AI 
@@ -70,12 +71,26 @@ export default function Hero({ highContrast }: HeroProps) {
             className={`inline-flex items-center justify-center gap-2 text-[11px] uppercase tracking-widest font-mono font-medium px-6 py-3.5 rounded-none transition-all hover:scale-[1.02] focus:outline-none focus:ring-1 focus:ring-white cursor-pointer ${
               highContrast
                 ? "bg-cyan-400 text-black hover:bg-cyan-300 border border-white"
-                : "bg-white text-black hover:bg-slate-205 border border-white/20"
+                : "bg-white text-black hover:bg-slate-200 border border-white/20"
             }`}
             aria-label="View Jayden's production projects"
           >
             Explore Projects
             <ArrowRight className="h-3.5 w-3.5" />
+          </a>
+
+          <a
+            href="/cv.pdf"
+            download
+            className={`inline-flex items-center justify-center gap-2 text-[11px] uppercase tracking-widest font-mono font-medium px-6 py-3.5 rounded-none transition-all hover:scale-[1.02] focus:outline-none focus:ring-1 focus:ring-white cursor-pointer border ${
+              highContrast
+                ? "border-cyan-400 text-cyan-400 hover:bg-neutral-900"
+                : "border-white/20 text-[#aaa] hover:text-white hover:border-white bg-white/5"
+            }`}
+            aria-label="Download Jayden's CV as PDF"
+          >
+            Download CV
+            <Download className="h-3.5 w-3.5" />
           </a>
 
           {/* Social Icons with clear screen reader descriptions */}
@@ -109,7 +124,7 @@ export default function Hero({ highContrast }: HeroProps) {
             </a>
 
             <a
-              href="https://wa.me/27737220854?text=Hello%20Jayden,%20I'm%20interested%2520in%2520Lume%252520Systems."
+              href="https://wa.me/27737220854?text=Hello%20Jayden%2C%20I%27m%20interested%20in%20Lume%20Systems."
               target="_blank"
               rel="noopener noreferrer"
               className={`inline-flex items-center justify-center h-11 w-11 rounded-none border transition-all hover:scale-[1.05] focus:outline-none focus:ring-1 focus:ring-white cursor-pointer ${
@@ -126,17 +141,35 @@ export default function Hero({ highContrast }: HeroProps) {
 
         {/* Quick Tech Highlights Badge Area */}
         <div className="mt-16 pt-8 border-t border-white/10">
-          <p className="text-[10px] uppercase tracking-[0.3em] text-[#555] font-bold mb-4 font-sans">Core Architectural Philosophies</p>
-          <div className="flex flex-wrap gap-x-6 gap-y-3 text-xs font-mono tracking-wide">
-            <span className="flex items-center gap-2 text-[#aaa]">
-              <Accessibility className="h-3.5 w-3.5 text-[#888]" /> Inclusive Design First
-            </span>
-            <span className="flex items-center gap-2 text-[#aaa]">
-              <Terminal className="h-3.5 w-3.5 text-[#888]" /> Performance Driven
-            </span>
-            <span className="flex items-center gap-2 text-[#aaa]">
-              <Sparkles className="h-3.5 w-3.5 text-[#888]" /> AI Grounded Interfaces
-            </span>
+          <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-8">
+            <div>
+              <p className="text-[10px] uppercase tracking-[0.3em] text-[#555] font-bold mb-4 font-sans">Core Principles</p>
+              <div className="flex flex-wrap gap-x-6 gap-y-3 text-xs font-mono tracking-wide">
+                <span className="flex items-center gap-2 text-[#aaa]">
+                  <Accessibility className="h-3.5 w-3.5 text-[#888]" /> Inclusive Design First
+                </span>
+                <span className="flex items-center gap-2 text-[#aaa]">
+                  <Terminal className="h-3.5 w-3.5 text-[#888]" /> Performance Driven
+                </span>
+                <span className="flex items-center gap-2 text-[#aaa]">
+                  <Sparkles className="h-3.5 w-3.5 text-[#888]" /> AI-Grounded Interfaces
+                </span>
+              </div>
+            </div>
+            <div>
+              <p className="text-[10px] uppercase tracking-[0.3em] text-[#555] font-bold mb-4 font-sans">Spoken Languages</p>
+              <div className="flex flex-wrap gap-2">
+                {SPOKEN_LANGUAGES.map(({ lang, level }) => (
+                  <span key={lang} className={`text-[10px] font-mono px-2.5 py-1 border rounded-none ${
+                    highContrast
+                      ? "border-slate-600 bg-black text-white"
+                      : "bg-white/5 border-white/10 text-slate-300"
+                  }`}>
+                    {lang} <span className="text-[#555]">· {level}</span>
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -38,12 +38,12 @@ export default function Skills({ highContrast }: SkillsProps) {
               highContrast ? "text-white" : "text-white"
             }`}
           >
-            Sovereign <span className="font-sans not-italic font-bold uppercase tracking-tighter text-[#666]">Technology Stack.</span>
+            Technology <span className="font-sans not-italic font-bold uppercase tracking-tighter text-[#666]">Stack.</span>
           </h2>
           <p className={`mt-4 text-xs sm:text-sm max-w-2xl font-sans leading-relaxed ${
             highContrast ? "text-slate-100" : "text-[#888]"
           }`}>
-            A robust set of programming languages, state-management frameworks, and modern deployment tools engineered for speed and ultimate data safety.
+            Languages, frameworks, and tools I work with across frontend, backend, and infrastructure.
           </p>
         </div>
 

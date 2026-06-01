@@ -5,8 +5,8 @@ export interface Project {
   description: string;
   tech: string[];
   links?: {
-    github?: string;
-    live?: string;
+    github?: string | null;
+    live?: string | null;
   };
   features: string[];
   accessibilityNote?: string;

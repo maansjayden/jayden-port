@@ -22,7 +22,7 @@ export default function Projects({ highContrast }: ProjectsProps) {
         
         {/* Section Header */}
         <div className="text-left mb-16">
-          <p className="text-[10px] font-mono uppercase tracking-[0.3em] text-[#888] mb-2">Selected Production Artifacts</p>
+          <p className="text-[10px] font-mono uppercase tracking-[0.3em] text-[#888] mb-2">Selected Projects</p>
           <h2
             id="projects-heading"
             className={`text-3xl sm:text-4xl font-serif font-light leading-tight tracking-tight italic ${
@@ -172,19 +172,27 @@ export default function Projects({ highContrast }: ProjectsProps) {
                   {/* Interactive Button */}
                   <div className="mt-8 pt-6 border-t border-white/10">
                     <div className="flex gap-4">
-                      <a
-                        href={project.links?.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`flex-1 inline-flex items-center justify-center gap-2 text-[10px] uppercase tracking-widest font-mono py-3 rounded-none transition-all hover:scale-102 cursor-pointer ${
-                          highContrast
-                            ? "bg-cyan-400 text-black font-bold hover:bg-cyan-300"
-                            : "bg-[#050505] border border-white/10 text-[#aaa] hover:text-white hover:border-white"
-                        }`}
-                        aria-label={`Visit live implementation website for ${project.title} (opens in external tab)`}
-                      >
-                        Launch Application <ExternalLink className="h-3.5 w-3.5" />
-                      </a>
+                      {project.links?.live ? (
+                        <a
+                          href={project.links.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`flex-1 inline-flex items-center justify-center gap-2 text-[10px] uppercase tracking-widest font-mono py-3 rounded-none transition-all hover:scale-[1.02] cursor-pointer ${
+                            highContrast
+                              ? "bg-cyan-400 text-black font-bold hover:bg-cyan-300"
+                              : "bg-[#050505] border border-white/10 text-[#aaa] hover:text-white hover:border-white"
+                          }`}
+                          aria-label={`Visit live site for ${project.title} (opens in external tab)`}
+                        >
+                          View Live Site <ExternalLink className="h-3.5 w-3.5" />
+                        </a>
+                      ) : (
+                        <span className={`flex-1 inline-flex items-center justify-center text-[10px] uppercase tracking-widest font-mono py-3 rounded-none border ${
+                          highContrast ? "border-slate-700 text-slate-600" : "border-white/5 text-[#444]"
+                        }`}>
+                          Live Demo Unavailable
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>

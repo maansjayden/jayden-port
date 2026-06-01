@@ -15,8 +15,8 @@ export const PROJECTS_DATA: Project[] = [
     ],
     accessibilityNote: "Conforms to WCAG 2.2 AAA standards with high-contrast ratios, complete keyboard support, and dynamic Aria-live announcement regions.",
     links: {
-      github: "https://github.com/lumesystems",
-      live: "https://lumesystems.com"
+      github: "https://github.com/maansjayden/Lume-AI",
+      live: "https://lumesystems.co.za"
     }
   },
   {
@@ -33,7 +33,7 @@ export const PROJECTS_DATA: Project[] = [
     accessibilityNote: "Command line design compatible with keyboard-only keyboard navigation and native tactile terminal screen readers (eg. NVDA/JAWS text echo).",
     links: {
       github: "https://github.com/maansjayden56",
-      live: "https://github.com/maansjayden56"
+      live: null
     }
   },
   {
@@ -50,7 +50,7 @@ export const PROJECTS_DATA: Project[] = [
     accessibilityNote: "Complete verbal readouts for state coordinates and tactile input profiles designed for full accessibility.",
     links: {
       github: "https://github.com/maansjayden56",
-      live: "https://github.com/maansjayden56"
+      live: null
     }
   },
   {
@@ -67,8 +67,8 @@ export const PROJECTS_DATA: Project[] = [
     ],
     accessibilityNote: "Fully compliant with screen readers, leveraging structured landmarks, role descriptions, and accessible interactive code views.",
     links: {
-      github: "https://github.com/maansjayden56",
-      live: "https://github.com/maansjayden56"
+      github: "https://github.com/maansjayden/JAVJer",
+      live: null
     }
   },
   {
@@ -85,25 +85,31 @@ export const PROJECTS_DATA: Project[] = [
     ],
     accessibilityNote: "Focus-ring visibility, accessible alt-text for vehicle transformation images, and high-readability form labels.",
     links: {
-      github: "https://github.com/maansjayden56",
-      live: "https://github.com/maansjayden56"
+      github: "https://github.com/maansjayden/hjr-web",
+      live: "https://hjr-web.vercel.app"
     }
   }
 ];
 
 export const SKILLS_DATA: SkillGroup[] = [
   {
-    category: "Languages",
-    skills: ["Python", "Java", "JavaScript", "HTML", "CSS", "SQL", "Afrikaans (Native)", "English (Fluent)", "Dutch (Studying)"]
+    category: "Programming Languages",
+    skills: ["Python", "Java", "JavaScript", "TypeScript", "HTML", "CSS", "SQL"]
   },
   {
     category: "Frameworks & Runtimes",
     skills: ["React", "Vite", "FastAPI", "Node.js", "TDD Paradigms"]
   },
   {
-    category: "Tools, API & Databases",
-    skills: ["Git", "VS Code", "IntelliJ IDEA", "Fidelio", "iTravel", "PostgreSQL", "SQLite", "Docker", "RESTful APIs", "Google Calendar API"]
+    category: "Tools, APIs & Databases",
+    skills: ["Git", "VS Code", "IntelliJ IDEA", "PostgreSQL", "SQLite", "Docker", "RESTful APIs", "Google Calendar API", "Fidelio", "iTravel"]
   }
+];
+
+export const SPOKEN_LANGUAGES = [
+  { lang: "Afrikaans", level: "Native" },
+  { lang: "English", level: "Fluent" },
+  { lang: "Dutch", level: "Studying" },
 ];
 
 export const EXPERIENCE_DATA: ExperienceItem[] = [
