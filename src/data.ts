@@ -86,7 +86,25 @@ export const PROJECTS_DATA: Project[] = [
     accessibilityNote: "Focus-ring visibility, accessible alt-text for vehicle transformation images, and high-readability form labels.",
     links: {
       github: "https://github.com/maansjayden/hjr-web",
-      live: "https://hjr-web.vercel.app"
+      live: "https://hjrgrouppaarl.co.za"
+    }
+  },
+  {
+    id: "reo-systems",
+    title: "REO Systems",
+    subtitle: "AI Real Estate Operating System",
+    description: "A B2B SaaS CRM built specifically for real estate agents and agencies. Uses vector embeddings and semantic AI to match clients to properties based on intent — not just filters — while automating lead pipelines, eligibility checks, and social media distribution.",
+    tech: ["Next.js 15", "FastAPI", "Supabase", "PostgreSQL", "pgvector", "Gemini API", "Docker", "TypeScript", "Tailwind CSS"],
+    features: [
+      "Semantic property-client matching using 384-dimensional vector embeddings (all-MiniLM-L6-v2) — understands intent like 'pet-friendly loft feel', not just checkboxes.",
+      "Eligibility guardrails that flag documentation gaps before an agent contacts a client, reducing wasted viewings.",
+      "Kanban lead pipeline with drag-and-drop for managing the full sales and rental funnel.",
+      "One-click social media distribution — converts a listing into an Instagram Reel, carousel, and WhatsApp blast automatically."
+    ],
+    accessibilityNote: "Keyboard-navigable Kanban board with full focus management and ARIA live regions for real-time lead updates.",
+    links: {
+      github: "https://github.com/maansjayden/real-estate-crm",
+      live: "https://reosystems.eu"
     }
   }
 ];
