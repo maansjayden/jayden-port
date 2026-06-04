@@ -18,7 +18,7 @@ export default function Contact({ highContrast }: ContactProps) {
 
   const emailAddress = "info@lumesystems.co.za";
   const whatsappUrl = "https://wa.me/27737220854?text=Hello%20Jayden,%20I'm%20interested%20in%20Lume%20Systems.";
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbwpJUfg0VskbJktWf5cBu51jeMYlgxMVgWhdOpEVaS5zSSpOqoGeHZ4Mm6PJn7PE-TuAw/exec';
+  const scriptURL = 'https://formspree.io/f/xvzngqro';
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(emailAddress);
@@ -39,31 +39,23 @@ export default function Contact({ highContrast }: ContactProps) {
     }
 
     setIsSubmitting(true);
-    
+
     try {
-      const formData = new FormData();
-      formData.append('name', formState.name);
-      formData.append('email', formState.email);
-      formData.append('subject', formState.subject);
-      formData.append('message', formState.message);
-
-      await fetch(scriptURL, {
+      const res = await fetch(scriptURL, {
         method: 'POST',
-        body: formData,
-        mode: 'no-cors'
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify(formState),
       });
 
-      setSubmitSuccess(true);
-      setFormState({
-        name: "",
-        email: "",
-        subject: "Business / General Inquiry",
-        message: ""
-      });
-      setTimeout(() => setSubmitSuccess(false), 6000);
+      if (res.ok) {
+        setSubmitSuccess(true);
+        setFormState({ name: "", email: "", subject: "Business / General Inquiry", message: "" });
+        setTimeout(() => setSubmitSuccess(false), 6000);
+      } else {
+        throw new Error('Server error');
+      }
     } catch (error) {
-      console.error('Error!', error);
-      alert("Message failed to dispatch. Please use the direct email link instead.");
+      alert("Message failed to send. Please email info@lumesystems.co.za directly.");
     } finally {
       setIsSubmitting(false);
     }
