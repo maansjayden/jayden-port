@@ -205,7 +205,7 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     role: "Placement Facilitator",
     organization: "WeThinkCode_",
     location: "Cape Town, South Africa",
-    period: "Sep 2025 - Feb 2026",
+    period: "Sep 2025 — Feb 2026",
     description: [
       "Coordinated the student placement module, connecting WeThinkCode_ graduates with industry hiring partners.",
       "Managed scheduling, communication, and documentation to streamline the end-to-end recruitment process for multiple cohorts."
