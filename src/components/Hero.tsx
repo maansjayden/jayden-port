@@ -100,7 +100,7 @@ export default function Hero({ highContrast }: HeroProps) {
             </a>
 
             <a
-              href="https://linkedin.com/in/jayden-maans-3a81202b7"
+              href="https://linkedin.com/in/jaydenmaans"
               target="_blank"
               rel="noopener noreferrer"
               className={`inline-flex items-center justify-center h-11 w-11 rounded-none border transition-all hover:scale-[1.05] focus:outline-none focus:ring-1 focus:ring-white cursor-pointer ${

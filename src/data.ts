@@ -16,7 +16,7 @@ export const PROJECTS_DATA: Project[] = [
     accessibilityNote: "Conforms to WCAG 2.2 AAA standards with high-contrast ratios, complete keyboard support, and dynamic Aria-live announcement regions.",
     links: {
       github: "https://github.com/maansjayden/Lume-AI",
-      live: "https://lumesystems.co.za"
+      live: null
     }
   },
   {
@@ -87,6 +87,43 @@ export const PROJECTS_DATA: Project[] = [
     links: {
       github: "https://github.com/maansjayden/hjr-web",
       live: "https://hjrgrouppaarl.co.za"
+    }
+  },
+  {
+    id: "lume-systems-web",
+    title: "Lume Systems Website",
+    subtitle: "Company Landing Page",
+    description: "Designed and built the official Lume Systems company website from scratch — a bold, premium landing page showcasing services, team, clients, and contact. Hosted on a custom domain via GitHub Pages.",
+    tech: ["React", "Vite", "Tailwind CSS", "Formspree", "GitHub Pages"],
+    features: [
+      "Floating pill navbar with hide-on-scroll and mobile hamburger menu.",
+      "Animated hero section with floating amber orbs and CSS keyframe animations.",
+      "Scroll-reveal animations using a custom Intersection Observer hook.",
+      "Integrated Formspree contact form with client-side validation and WhatsApp link.",
+      "Full SEO meta tags, Open Graph, branded favicon, and custom 404 page."
+    ],
+    accessibilityNote: "WCAG 2.2 AAA compliant with skip-to-content link, accessible accessibility widget, full keyboard navigation, and ARIA labels throughout.",
+    links: {
+      github: "https://github.com/maansjayden/lume-systems",
+      live: "https://lumesystems.co.za"
+    }
+  },
+  {
+    id: "vrh-consultancy",
+    title: "VRH Consultancy",
+    subtitle: "Hosting & Email Infrastructure",
+    description: "Set up and manages the complete hosting infrastructure and professional email system for VRH Consultancy, a Netherlands-based business strategy consultancy. Ensures reliable uptime, secure mail delivery, and domain management.",
+    tech: ["Web Hosting", "DNS Management", "Email Configuration", "SSL", "Domain Management"],
+    features: [
+      "Full domain and DNS configuration for vrhconsultancy.nl.",
+      "Professional business email setup with SPF, DKIM, and DMARC records for secure delivery.",
+      "SSL certificate provisioning and managed web hosting with monitored uptime.",
+      "Ongoing technical support and infrastructure maintenance."
+    ],
+    accessibilityNote: "Infrastructure work ensuring the consultancy's digital presence meets professional standards for all users.",
+    links: {
+      github: null,
+      live: "https://vrhconsultancy.nl"
     }
   },
   {

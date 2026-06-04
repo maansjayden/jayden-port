@@ -83,7 +83,7 @@ export default function Header({ highContrast }: HeaderProps) {
           {/* Secondary Header Link: Founder direct quote */}
           <div className="hidden lg:flex items-center gap-4">
             <a
-              href="https://github.com/lumesystems"
+              href="https://lumesystems.co.za"
               target="_blank"
               rel="noopener noreferrer"
               className={`flex items-center gap-1.5 text-[10px] uppercase tracking-[0.15em] px-4 py-2 border transition-all hover:scale-105 cursor-pointer ${
@@ -139,7 +139,7 @@ export default function Header({ highContrast }: HeaderProps) {
             ))}
             <div className="pt-4 pb-2 border-t border-white/10 px-4">
               <a
-                href="https://github.com/lumesystems"
+                href="https://lumesystems.co.za"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`flex items-center justify-center gap-2 text-[10px] uppercase tracking-[0.15em] py-2 rounded-xl text-center border ${
